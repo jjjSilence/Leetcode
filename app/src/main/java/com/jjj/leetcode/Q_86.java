@@ -4,22 +4,9 @@ public class Q_86 {
     public static void main(String[] args) {
         System.out.print("ok\n");
         int[] nums = new int[]{};
-        ListNode listNode = null;
-        ListNode head = null;
-        for (int i : nums) {
-            if (head == null) {
-                listNode = new ListNode(i);
-                head = listNode;
-            } else {
-                listNode.next = new ListNode(i);
-                listNode = listNode.next;
-            }
-        }
-        ListNode listNode1 = partition(head, 3);
-        while (listNode1 != null) {
-            System.out.print(listNode1.val + "; ");
-            listNode1 = listNode1.next;
-        }
+        ListNode head = ListNode.transform(nums);
+        ListNode listNode = partition(head, 3);
+        ListNode.print(listNode);
     }
 
     public static ListNode partition(ListNode head, int x) {
